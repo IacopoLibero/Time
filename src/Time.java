@@ -91,35 +91,26 @@ public class Time
     }
     private static Time normalizza(int s)
     {
-        (double)s;
         Time conv=null;
         if(s<3600)
         {
             if(s<60)
             {
-                (int)s;
-                conv=new Time(0, 0, s);
+                return conv=new Time(0, 0, s);
             }
             else
             {
-                double sec=0.0;
-                sec=s-(int)(s/60)*60;
-                int min=(int)s/60;
-                (int)sec;
-                conv=new Time(0, min, sec);
+                int sec=0;
+                int min=(int)(s/60);
+                sec=  s-(min*60);
+                return conv=new Time(0, min, sec);
             }
         }
         else
         {
-            double sec=0.0;
-            sec=s-(int)(s/60)*60;
-            double min=s/60;
-            min=min-(int)(min/60)*60;
-            int h=(int)min/60;
-            (int)min;
-            conv=new Time(h, min, sec);
+            //
+            return conv=new Time(0, 0, 0);
         }
-        return conv;
     }
     /**
      * Esprime le ore, i minuti e i secondi dell'oggetto Time in secondi. Esempio. 1 ora, 20 min, 10 secondi -> 4810s
